@@ -1,0 +1,2 @@
+frontend:zustand,react,daisy ui,tailwind,axios,lucide-react
+backend:express mongoose dotenv jsonwebtoken bcryptjs cookie-parser cloudinary socket.io cors
