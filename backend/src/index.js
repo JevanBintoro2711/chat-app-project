@@ -3,11 +3,11 @@ import cors from "cors";
 import dotenv from "dotenv";
 import express from "express";
 import { connectDB } from "./lib/db.js";
+import { app, server } from "./lib/socket.js";
 import authRoutes from "./routes/auth.route.js";
 import messageRoutes from "./routes/message.route.js";
 dotenv.config();
 
-const app = express();
 const PORT = process.env.PORT;
 
 app.use(express.json());
@@ -20,9 +20,9 @@ app.use(
 );
 
 app.use("/api/auth", authRoutes);
-app.use("/api/message", messageRoutes);
+app.use("/api/messages", messageRoutes);
 
-app.listen(PORT, () => {
+server.listen(PORT, () => {
   console.log("Server is running on http://localhost:" + PORT);
   connectDB();
 });
