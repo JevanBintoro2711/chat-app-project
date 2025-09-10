@@ -189,10 +189,14 @@
     "yocto-queue": "^0.1.0",
     "which-collection": "^1.0.2"
   },
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "",
-    "start": ""
+    "build": "npm run build --workspace frontend",
+    "start": "npm runs start --workspace backend"
   },
   "repository": {
     "type": "git",
